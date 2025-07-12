@@ -26,11 +26,17 @@ export function Hero() {
     yMovement: 20 + Math.random() * 50
   }));
 
+  // Fix for framer-motion type error
+  const MotionDiv = motion.div as any;
+  const MotionH1 = motion.h1 as any;
+  const MotionP = motion.p as any;
+  const MotionButton = motion.button as any;
+
   return (
     <section className="relative h-screen overflow-hidden bg-black flex items-center justify-center">
       {/* Subtle Bitcoin Background Elements */}
       {bitcoinElements.map((btc) => (
-        <motion.div
+        <MotionDiv
           key={`btc-${btc.id}`}
           className="absolute text-yellow-400 pointer-events-none"
           style={{
@@ -53,13 +59,13 @@ export function Hero() {
           }}
         >
           ₿
-        </motion.div>
+        </MotionDiv>
       ))}
 
       {/* Your Perfect Existing Content - Completely Unchanged */}
       <AnimatePresence>
         {showImage && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.2 }}
@@ -71,48 +77,48 @@ export function Hero() {
               alt="Crypto Rocket"
               className="w-64 h-64 md:w-96 md:h-96 object-contain"
             />
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {showText && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center z-10 px-4"
           >
-            <motion.h1
+            <MotionH1
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: 'spring' }}
               className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-yellow-300 to-yellow-600 bg-clip-text text-transparent"
             >
               KING OF CRYPTO PIRATES
-            </motion.h1>
-            <motion.p
+            </MotionH1>
+            <MotionP
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
               className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
             >
               Join the ultimate crypto adventure with Luffy Coin
-            </motion.p>
-            <motion.div
+            </MotionP>
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <motion.button
+              <MotionButton
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full font-bold text-black text-lg shadow-lg hover:shadow-yellow-500/40 transition-all"
               >
                 BUY NOW 🚀
-              </motion.button>
-            </motion.div>
-          </motion.div>
+              </MotionButton>
+            </MotionDiv>
+          </MotionDiv>
         )}
       </AnimatePresence>
     </section>
