@@ -29,11 +29,6 @@ export function Footer() {
                   <FaTelegram className="text-2xl" />
                 </a>
               </motion.div>
-              <motion.div whileHover={{ y: -3 }}>
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                  <FaGithub className="text-2xl" />
-                </a>
-              </motion.div>
             </div>
           </div>
         </motion.div>
