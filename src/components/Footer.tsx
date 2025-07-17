@@ -25,7 +25,7 @@ export function Footer() {
                 </a>
               </motion.div>
               <motion.div whileHover={{ y: -3 }}>
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
+                <a href="https://t.me/+-f0j2EmdN_o4OGQ1" target='blank' className="text-gray-400 hover:text-yellow-400 transition-colors">
                   <FaTelegram className="text-2xl" />
                 </a>
               </motion.div>
