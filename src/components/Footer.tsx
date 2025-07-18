@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { FaTwitter, FaTelegram, FaGithub } from 'react-icons/fa';
+import { BsTwitterX } from "react-icons/bs";
 
 export function Footer() {
   return (
@@ -20,8 +21,8 @@ export function Footer() {
             
             <div className="flex space-x-6">
               <motion.div whileHover={{ y: -3 }}>
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                  <FaTwitter className="text-2xl" />
+                <a href="https://x.com/pirateluffy___?s=11" target='blank' className="text-gray-400 hover:text-yellow-400 transition-colors">
+                  <BsTwitterX className="text-2xl" />
                 </a>
               </motion.div>
               <motion.div whileHover={{ y: -3 }}>
